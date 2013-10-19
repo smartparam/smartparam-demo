@@ -53,6 +53,6 @@ public class FileToDatabaseTransfererDemo {
         transferer.transfer(TransferConfig.allOperations(), classpathRepository, jdbcRepository);
 
         // then
-        assertThat(jdbcRepository.listParameters()).hasSize(1);
+        assertThat(jdbcRepository.listParameters()).isNotEmpty();
     }
 }

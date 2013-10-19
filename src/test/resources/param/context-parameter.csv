@@ -1,0 +1,11 @@
+{
+    name: "contextParameter",
+    inputLevels: 2,
+    levels: [
+        { name: "code", type: "string", levelCreator: "code" },
+        { name: "amount", matcher: "between/ie", type: "integer", levelCreator: "amount" },
+        { name: "value", type: "string" }
+    ]
+}
+code;amount;value
+HELLO_WORLD;1;Hello World
