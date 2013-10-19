@@ -20,14 +20,14 @@ import org.polyjdbc.core.dialect.DialectRegistry;
 import org.polyjdbc.core.integration.DataSourceFactory;
 import org.smartparam.repository.fs.ClasspathParamRepository;
 import org.smartparam.repository.jdbc.JdbcParamRepository;
-import org.smartparam.repository.jdbc.config.Configuration;
+import org.smartparam.repository.jdbc.config.JdbcConfig;
 import org.smartparam.transferer.StandardTransfererBuilder;
 import org.smartparam.transferer.TransferConfig;
 import org.smartparam.transferer.Transferer;
 import org.testng.annotations.Test;
 
 import static org.fest.assertions.api.Assertions.assertThat;
-import static org.smartparam.repository.jdbc.config.DefaultConfigurationBuilder.defaultConfiguration;
+import static org.smartparam.repository.jdbc.config.JdbcConfigBuilder.jdbcConfig;
 import static org.smartparam.repository.jdbc.config.pico.PicoJdbcParamRepositoryFactory.jdbcRepository;
 
 /**
@@ -37,12 +37,11 @@ import static org.smartparam.repository.jdbc.config.pico.PicoJdbcParamRepository
 public class FileToDatabaseTransfererDemo {
 
     @Test
-    public void transferToDatabase() {
+    public void demonstrateTransferFromFileToDatabase() {
         // given
         DataSource dataSource = DataSourceFactory.create(DialectRegistry.dialect("H2"), "jdbc:h2:mem:test", "smartparam", "smartparam");
-        Configuration configuration = defaultConfiguration().withDialect(DialectRegistry.dialect("H2")).build();
-
-        JdbcParamRepository jdbcRepository = jdbcRepository(dataSource, configuration);
+        JdbcConfig jdbcConfig = jdbcConfig().withDialect(DialectRegistry.dialect("H2")).build();
+        JdbcParamRepository jdbcRepository = jdbcRepository(dataSource, jdbcConfig);
         jdbcRepository.initialize();
 
         ClasspathParamRepository classpathRepository = new ClasspathParamRepository("/param/", ".*\\.csv$");

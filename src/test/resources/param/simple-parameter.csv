@@ -1,12 +1,11 @@
-#{
-#    name: "simpleParameter",
-#    inputLevels: 2,
-#    levels: [
-#        { name: "code", type: "string" },
-#        { name: "amount", matcher: "between/ie", type: "integer" },
-#        { name: "value", type: "string" }
-#    ]
-#}
-##
+{
+    name: "simpleParameter",
+    inputLevels: 2,
+    levels: [
+        { name: "code", type: "string" },
+        { name: "amount", matcher: "between/ie", type: "integer" },
+        { name: "value", type: "string" }
+    ]
+}
 code;amount;value
 HELLO_WORLD;1;Hello World
