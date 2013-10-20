@@ -1,0 +1,11 @@
+{
+    name: "dayToMonthMapping",
+    inputLevels: 1,
+    levels: [
+        {type: "date", matcher: "between/ii", levelCreator: "date"},
+        {type: "string", name: "value"}
+    ]
+}
+date;value
+2013-04-01:2013-04-30;April 2013
+2013-05-01:2013-05-31;May 2013
