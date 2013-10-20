@@ -38,7 +38,7 @@ public class SimpleParameterUsageDemo {
         ParamEngine engine = PicoParamEngineFactory.paramEngine(engineConfig);
 
         // when
-        String value = engine.get("simpleParameter", "HELLO_WORLD", 1).get("value").getString();
+        String value = engine.get("simpleParameter", "HELLO_WORLD", 1).getString();
 
 
         // then

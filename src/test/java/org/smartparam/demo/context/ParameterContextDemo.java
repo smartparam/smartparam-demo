@@ -42,7 +42,7 @@ public class ParameterContextDemo {
 
         // when
         ParamContext context = new DefaultContext().with("code", "HELLO_WORLD").with("amount", 1);
-        String value = engine.get("contextParameter", context).get("value").getString();
+        String value = engine.get("contextParameter", context).getString("value");
 
         // then
         Assertions.assertThat(value).isEqualTo("Hello World");
