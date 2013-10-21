@@ -24,7 +24,7 @@ import org.smartparam.serializer.ParamDeserializer;
 import org.smartparam.serializer.ParamSerializer;
 import org.smartparam.serializer.config.SerializationConfig;
 import org.smartparam.serializer.config.SerializationConfigBuilder;
-import org.smartparam.serializer.config.pico.PicoParamSerializerFactory;
+import org.smartparam.serializer.config.ParamSerializerFactory;
 import org.smartparam.serializer.exception.ParamSerializationException;
 import org.testng.annotations.Test;
 import static org.smartparam.engine.test.assertions.Assertions.assertThat;
@@ -41,7 +41,7 @@ public class SerializationDemo {
     public void demonstrateSerializingParameterUsingDefaultConfig() throws ParamSerializationException {
         // given
         SerializationConfig serializationConfig = SerializationConfigBuilder.serializationConfig().build();
-        ParamSerializer serializer = PicoParamSerializerFactory.paramSerializer(serializationConfig);
+        ParamSerializer serializer = ParamSerializerFactory.paramSerializer(serializationConfig);
 
         Parameter parameter = parameter().withName("parameterName").withLevels(level().build()).build();
         StringWriter stringWriter = new StringWriter();
@@ -57,7 +57,7 @@ public class SerializationDemo {
     public void demonstrateDeserializingParameterUsingDefaultConfig() throws ParamSerializationException {
         // given
         SerializationConfig serializationConfig = SerializationConfigBuilder.serializationConfig().build();
-        ParamDeserializer deserializer = PicoParamSerializerFactory.paramDeserializer(serializationConfig);
+        ParamDeserializer deserializer = ParamSerializerFactory.paramDeserializer(serializationConfig);
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(this.getClass().getResourceAsStream("/param/simple-parameter.csv")));
 

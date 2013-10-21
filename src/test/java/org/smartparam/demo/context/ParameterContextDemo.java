@@ -16,8 +16,8 @@
 package org.smartparam.demo.context;
 
 import org.smartparam.engine.config.ParamEngineConfig;
-import org.smartparam.engine.config.pico.ParamEngineConfigBuilder;
-import org.smartparam.engine.config.pico.PicoParamEngineFactory;
+import org.smartparam.engine.config.ParamEngineConfigBuilder;
+import org.smartparam.engine.config.ParamEngineFactory;
 import org.smartparam.engine.core.context.DefaultContext;
 import org.smartparam.engine.core.context.ParamContext;
 import org.smartparam.engine.core.engine.ParamEngine;
@@ -38,7 +38,7 @@ public class ParameterContextDemo {
         ParamEngineConfig engineConfig = ParamEngineConfigBuilder.paramEngineConfig()
                 .withAnnotationScanEnabled("org.smartparam.demo.context")
                 .withParameterRepositories(classpathRepository).build();
-        ParamEngine engine = PicoParamEngineFactory.paramEngine(engineConfig);
+        ParamEngine engine = ParamEngineFactory.paramEngine(engineConfig);
 
         // when
         ParamContext context = new DefaultContext().with("code", "HELLO_WORLD").with("amount", 1);

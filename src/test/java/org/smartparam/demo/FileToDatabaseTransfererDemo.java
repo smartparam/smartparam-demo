@@ -28,7 +28,7 @@ import org.testng.annotations.Test;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 import static org.smartparam.repository.jdbc.config.JdbcConfigBuilder.jdbcConfig;
-import static org.smartparam.repository.jdbc.config.pico.PicoJdbcParamRepositoryFactory.jdbcRepository;
+import static org.smartparam.repository.jdbc.config.JdbcParamRepositoryFactory.jdbcRepository;
 
 /**
  *
@@ -40,7 +40,7 @@ public class FileToDatabaseTransfererDemo {
     public void demonstrateTransferFromFileToDatabase() {
         // given
         DataSource dataSource = DataSourceFactory.create(DialectRegistry.dialect("H2"), "jdbc:h2:mem:test", "smartparam", "smartparam");
-        JdbcConfig jdbcConfig = jdbcConfig().withDialect(DialectRegistry.dialect("H2")).build();
+        JdbcConfig jdbcConfig = jdbcConfig().withDialect("H2").build();
         JdbcParamRepository jdbcRepository = jdbcRepository(dataSource, jdbcConfig);
         jdbcRepository.initialize();
 
