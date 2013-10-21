@@ -15,6 +15,7 @@
  */
 package org.smartparam.demo.spring;
 
+import java.util.Date;
 import org.smartparam.engine.core.context.ParamContext;
 import org.smartparam.spring.function.SpringPlugin;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,8 +36,8 @@ public class SpringLevelCreators {
     }
 
     @SpringPlugin("date")
-    public String date(ParamContext context) {
-        return dateProvider.getCurrentDate().toString("yyyy-MM-dd");
+    public Date date(ParamContext context) {
+        return dateProvider.getCurrentDate().toDate();
     }
 
 }
