@@ -18,7 +18,6 @@ package org.smartparam.demo;
 import org.smartparam.engine.config.ParamEngineConfig;
 import org.smartparam.engine.config.ParamEngineConfigBuilder;
 import org.smartparam.engine.config.ParamEngineFactory;
-import org.smartparam.engine.core.assembler.FromParamLevel;
 import org.smartparam.engine.core.engine.ParamEngine;
 import org.smartparam.repository.fs.ClasspathParamRepository;
 import org.testng.annotations.Test;
@@ -41,34 +40,7 @@ public class SimpleParameterUsageDemo {
         // when
         String value = engine.get("simpleParameter", "HELLO_WORLD", 1).getString();
 
-
         // then
         assertThat(value).isEqualTo("Hello World");
-    }
-
-    @Test
-    public void demonstratesAssemblingObjectsFromValueReturnedFromParameter() {
-        // given
-        ClasspathParamRepository classpathRepository = new ClasspathParamRepository("/param/", ".*csv$");
-        ParamEngineConfig engineConfig = ParamEngineConfigBuilder.paramEngineConfig().withAnnotationScanEnabled()
-                .withParameterRepositories(classpathRepository).build();
-        ParamEngine engine = ParamEngineFactory.paramEngine(engineConfig);
-
-        // when
-        AssembledObject object = engine.getObject("simpleParameter", AssembledObject.class, "HELLO_WORLD", 1);
-
-
-        // then
-        assertThat(object).isNotNull();
-        assertThat(object.value).isEqualTo("Hello World");
-    }
-
-    private static class AssembledObject {
-
-        String value;
-
-        private AssembledObject(@FromParamLevel("value") String value) {
-            this.value = value;
-        }
     }
 }
