@@ -20,6 +20,7 @@ import org.polyjdbc.core.dialect.DialectRegistry;
 import org.polyjdbc.core.integration.DataSourceFactory;
 import org.smartparam.repository.fs.ClasspathParamRepository;
 import org.smartparam.repository.jdbc.JdbcParamRepository;
+import org.smartparam.repository.jdbc.JdbcParamRepositoryFactory;
 import org.smartparam.repository.jdbc.config.JdbcConfig;
 import org.smartparam.transferer.StandardTransfererBuilder;
 import org.smartparam.transferer.TransferConfig;
@@ -28,7 +29,6 @@ import org.testng.annotations.Test;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 import static org.smartparam.repository.jdbc.config.JdbcConfigBuilder.jdbcConfig;
-import static org.smartparam.repository.jdbc.config.JdbcParamRepositoryFactory.jdbcRepository;
 
 /**
  *
@@ -41,7 +41,7 @@ public class FileToDatabaseTransfererDemo {
         // given
         DataSource dataSource = DataSourceFactory.create(DialectRegistry.dialect("H2"), "jdbc:h2:mem:test", "smartparam", "smartparam");
         JdbcConfig jdbcConfig = jdbcConfig().withDialect("H2").build();
-        JdbcParamRepository jdbcRepository = jdbcRepository(dataSource, jdbcConfig);
+        JdbcParamRepository jdbcRepository = JdbcParamRepositoryFactory.jdbcRepository(dataSource, jdbcConfig);
         jdbcRepository.initialize();
 
         ClasspathParamRepository classpathRepository = new ClasspathParamRepository("/param/", ".*\\.csv$");

@@ -15,7 +15,7 @@
  */
 package org.smartparam.demo.context;
 
-import org.smartparam.engine.annotations.JavaPlugin;
+import org.smartparam.engine.annotated.annotations.JavaPlugin;
 import org.smartparam.engine.core.context.DefaultContext;
 
 /**

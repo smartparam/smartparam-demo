@@ -15,13 +15,13 @@
  */
 package org.smartparam.demo.context;
 
+import org.fest.assertions.api.Assertions;
 import org.smartparam.engine.config.ParamEngineConfig;
 import org.smartparam.engine.config.ParamEngineConfigBuilder;
 import org.smartparam.engine.config.ParamEngineFactory;
+import org.smartparam.engine.core.ParamEngine;
 import org.smartparam.engine.core.context.DefaultContext;
 import org.smartparam.engine.core.context.ParamContext;
-import org.smartparam.engine.core.engine.ParamEngine;
-import org.smartparam.engine.test.assertions.Assertions;
 import org.smartparam.repository.fs.ClasspathParamRepository;
 import org.testng.annotations.Test;
 
@@ -42,7 +42,7 @@ public class ParameterContextDemo {
 
         // when
         ParamContext context = new DefaultContext().with("code", "HELLO_WORLD").with("amount", 1);
-        String value = engine.get("contextParameter", context).getString("value");
+        String value = engine.get("contextParameter", context).get("value");
 
         // then
         Assertions.assertThat(value).isEqualTo("Hello World");

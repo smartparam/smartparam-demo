@@ -15,11 +15,11 @@
  */
 package org.smartparam.demo;
 
+import org.smartparam.engine.core.ParamEngine;
 import org.smartparam.engine.core.context.DefaultContext;
 import org.smartparam.engine.core.context.ParamContext;
-import org.smartparam.engine.core.engine.MultiValue;
-import org.smartparam.engine.core.engine.ParamEngine;
-import org.smartparam.engine.core.engine.ParamValue;
+import org.smartparam.engine.core.output.MultiValue;
+import org.smartparam.engine.core.output.ParamValue;
 import org.testng.annotations.Test;
 import static org.fest.assertions.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;

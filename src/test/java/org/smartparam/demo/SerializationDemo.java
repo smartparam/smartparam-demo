@@ -19,17 +19,17 @@ import com.jayway.jsonassert.JsonAssert;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
-import org.smartparam.engine.model.Parameter;
+import org.smartparam.engine.core.parameter.Parameter;
 import org.smartparam.serializer.ParamDeserializer;
 import org.smartparam.serializer.ParamSerializer;
+import org.smartparam.serializer.ParamSerializerFactory;
 import org.smartparam.serializer.config.SerializationConfig;
 import org.smartparam.serializer.config.SerializationConfigBuilder;
-import org.smartparam.serializer.config.ParamSerializerFactory;
 import org.smartparam.serializer.exception.ParamSerializationException;
 import org.testng.annotations.Test;
-import static org.smartparam.engine.test.assertions.Assertions.assertThat;
-import static org.smartparam.engine.test.builder.LevelTestBuilder.level;
-import static org.smartparam.engine.test.builder.ParameterTestBuilder.parameter;
+import static org.smartparam.engine.core.parameter.LevelTestBuilder.level;
+import static org.smartparam.engine.core.parameter.ParameterTestBuilder.parameter;
+import static org.smartparam.engine.test.ParamEngineAssertions.assertThat;
 
 /**
  *

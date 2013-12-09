@@ -18,7 +18,7 @@ package org.smartparam.demo;
 import org.smartparam.engine.config.ParamEngineConfig;
 import org.smartparam.engine.config.ParamEngineConfigBuilder;
 import org.smartparam.engine.config.ParamEngineFactory;
-import org.smartparam.engine.core.engine.ParamEngine;
+import org.smartparam.engine.core.ParamEngine;
 import org.smartparam.repository.fs.ClasspathParamRepository;
 import org.testng.annotations.Test;
 import static org.fest.assertions.api.Assertions.assertThat;
@@ -39,7 +39,7 @@ public class OverridingParamRepositoriesDemo {
         ParamEngine engine = ParamEngineFactory.paramEngine(engineConfig);
 
         // when
-        String value = engine.get("simpleParameter", "HELLO_WORLD", 1).getString();
+        String value = engine.get("simpleParameter", "HELLO_WORLD", 1).get();
 
         // then
         assertThat(value).isEqualTo("Overridden Hello World");

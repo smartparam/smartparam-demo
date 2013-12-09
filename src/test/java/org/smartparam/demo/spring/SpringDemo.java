@@ -15,8 +15,8 @@
  */
 package org.smartparam.demo.spring;
 
+import org.smartparam.engine.core.ParamEngine;
 import org.smartparam.engine.core.context.DefaultContext;
-import org.smartparam.engine.core.engine.ParamEngine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
