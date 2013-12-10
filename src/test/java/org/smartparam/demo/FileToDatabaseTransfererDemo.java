@@ -40,7 +40,7 @@ public class FileToDatabaseTransfererDemo {
     public void demonstrateTransferFromFileToDatabase() {
         // given
         DataSource dataSource = DataSourceFactory.create(DialectRegistry.dialect("H2"), "jdbc:h2:mem:test", "smartparam", "smartparam");
-        JdbcConfig jdbcConfig = jdbcConfig().withDialect("H2").build();
+        JdbcConfig jdbcConfig = jdbcConfig().withDialect(DialectRegistry.H2.getDialect()).build();
         JdbcParamRepository jdbcRepository = JdbcParamRepositoryFactory.jdbcRepository(dataSource, jdbcConfig);
         jdbcRepository.initialize();
 
