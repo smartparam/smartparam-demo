@@ -38,7 +38,7 @@ public class SpringDemo extends AbstractTestNGSpringContextTests {
         // given
 
         // when
-        String value = paramEngine.get("simpleParameter", "HELLO_WORLD", 1).getString();
+        String value = paramEngine.get("simpleParameter", "HELLO_WORLD", 1).get();
 
         // then
         assertThat(value).isEqualTo("Hello World");
@@ -56,7 +56,7 @@ public class SpringDemo extends AbstractTestNGSpringContextTests {
          * "date" level creator defined in SpringLevelCreators. It returns
          * date from DateProvider, which is always 2013-04-15.
          */
-        String value = paramEngine.get("dayToMonthMapping", context).getString();
+        String value = paramEngine.get("dayToMonthMapping", context).get();
 
         // then
         assertThat(value).isEqualTo("April 2013");

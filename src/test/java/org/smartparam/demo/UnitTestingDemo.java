@@ -55,7 +55,7 @@ public class UnitTestingDemo {
         MultiValue row = engine.get("test", new DefaultContext()).row();
 
         // then
-        assertThat(row.getString("name")).isEqualTo("constraint");
+        assertThat(row.get("name")).isEqualTo("constraint");
         assertThat(row.getInteger("min")).isEqualTo(0);
         assertThat(row.getInteger("max")).isEqualTo(10);
     }
@@ -73,7 +73,7 @@ public class UnitTestingDemo {
         ParamValue matrix = engine.get("test", new DefaultContext());
 
         // then
-        assertThat(matrix.get(0, "name").getString()).isEqualTo("constraint");
-        assertThat(matrix.get(1, "name").getString()).isEqualTo("constraint2");
+        assertThat(matrix.get(0, "name")).isEqualTo("constraint");
+        assertThat(matrix.get(1, "name")).isEqualTo("constraint2");
     }
 }
