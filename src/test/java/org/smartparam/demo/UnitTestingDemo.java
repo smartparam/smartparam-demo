@@ -73,7 +73,7 @@ public class UnitTestingDemo {
         ParamValue matrix = engine.get("test", new DefaultContext());
 
         // then
-        assertThat(matrix.get(0, "name")).isEqualTo("constraint");
-        assertThat(matrix.get(1, "name")).isEqualTo("constraint2");
+        assertThat(matrix.get(0, "name", String.class)).isEqualTo("constraint");
+        assertThat(matrix.get(1, "name", String.class)).isEqualTo("constraint2");
     }
 }
