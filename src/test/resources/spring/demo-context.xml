@@ -13,7 +13,6 @@
         <property name="paramRepository" ref="classpathRepository"/>
         <property name="packagesToScan">
             <list>
-                <value>org.smartparam.spring</value>
                 <value>org.smartparam.demo</value>
             </list>
         </property>
