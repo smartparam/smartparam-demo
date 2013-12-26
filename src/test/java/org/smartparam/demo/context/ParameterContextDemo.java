@@ -36,7 +36,7 @@ public class ParameterContextDemo {
         // given
         ClasspathParamRepository classpathRepository = new ClasspathParamRepository("/param/", ".*csv$");
         ParamEngineConfig engineConfig = ParamEngineConfigBuilder.paramEngineConfig()
-                .withAnnotationScanEnabled("org.smartparam.demo.context")
+                .withPackagesToScan("org.smartparam.demo.context")
                 .withParameterRepositories(classpathRepository).build();
         ParamEngine engine = ParamEngineFactory.paramEngine(engineConfig);
 

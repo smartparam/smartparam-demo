@@ -33,7 +33,7 @@ public class SimpleParameterUsageDemo {
     public void demonstratesUsageOfSimpleParameterUsingClasspathRepository() {
         // given
         ClasspathParamRepository classpathRepository = new ClasspathParamRepository("/param/", ".*csv$");
-        ParamEngineConfig engineConfig = ParamEngineConfigBuilder.paramEngineConfig().withAnnotationScanEnabled()
+        ParamEngineConfig engineConfig = ParamEngineConfigBuilder.paramEngineConfig()
                 .withParameterRepositories(classpathRepository).build();
         ParamEngine engine = ParamEngineFactory.paramEngine(engineConfig);
 

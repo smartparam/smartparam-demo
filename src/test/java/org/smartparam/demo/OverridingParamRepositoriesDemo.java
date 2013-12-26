@@ -34,7 +34,7 @@ public class OverridingParamRepositoriesDemo {
         // given
         ClasspathParamRepository classpathRepository = new ClasspathParamRepository("/param/", ".*csv$");
         ClasspathParamRepository overridingClasspathRepository = new ClasspathParamRepository("/overridingParams/", ".*csv$");
-        ParamEngineConfig engineConfig = ParamEngineConfigBuilder.paramEngineConfig().withAnnotationScanEnabled()
+        ParamEngineConfig engineConfig = ParamEngineConfigBuilder.paramEngineConfig()
                 .withParameterRepositories(overridingClasspathRepository, classpathRepository).build();
         ParamEngine engine = ParamEngineFactory.paramEngine(engineConfig);
 
