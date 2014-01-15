@@ -1,0 +1,16 @@
+{
+    name: "complexParameter",
+    inputLevels: 2,
+    levels: [
+        { name: "A", type: "string" },
+        { name: "P", type: "string" },
+        { name: "C", type: "string" },
+        { name: "V", type: "string" }
+    ]
+}
+A;P;C;V
+A;*;*;VA
+A;P;*;VP
+A;P;C1;VPC1
+A;P;C2;VPC2
+*;*;*;-
