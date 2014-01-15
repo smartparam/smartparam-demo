@@ -21,7 +21,7 @@ import org.smartparam.engine.config.ParamEngineFactory;
 import org.smartparam.engine.core.ParamEngine;
 import org.smartparam.repository.fs.ClasspathParamRepository;
 import org.testng.annotations.Test;
-import static org.fest.assertions.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  *

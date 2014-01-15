@@ -21,7 +21,7 @@ import org.smartparam.engine.core.context.ParamContext;
 import org.smartparam.engine.core.output.MultiValue;
 import org.smartparam.engine.core.output.ParamValue;
 import org.testng.annotations.Test;
-import static org.fest.assertions.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 import static org.smartparam.test.ParamValueBuilder.paramValue;
 

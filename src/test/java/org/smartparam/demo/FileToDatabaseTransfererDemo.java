@@ -17,17 +17,17 @@ package org.smartparam.demo;
 
 import javax.sql.DataSource;
 import org.polyjdbc.core.dialect.DialectRegistry;
-import org.polyjdbc.core.integration.DataSourceFactory;
+import org.polyjdbc.core.infrastructure.DataSourceFactory;
 import org.smartparam.repository.fs.ClasspathParamRepository;
 import org.smartparam.repository.jdbc.JdbcParamRepository;
 import org.smartparam.repository.jdbc.JdbcParamRepositoryFactory;
 import org.smartparam.repository.jdbc.config.JdbcConfig;
-import org.smartparam.transferer.StandardTransfererBuilder;
 import org.smartparam.transferer.TransferConfig;
 import org.smartparam.transferer.Transferer;
+import org.smartparam.transferer.TransfererBuilder;
 import org.testng.annotations.Test;
 
-import static org.fest.assertions.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.smartparam.repository.jdbc.config.JdbcConfigBuilder.jdbcConfig;
 
 /**
@@ -47,7 +47,7 @@ public class FileToDatabaseTransfererDemo {
         ClasspathParamRepository classpathRepository = new ClasspathParamRepository("/param/", ".*\\.csv$");
         classpathRepository.initialize();
 
-        Transferer transferer = StandardTransfererBuilder.standardTransferer().build();
+        Transferer transferer = TransfererBuilder.transferer().build();
 
         // when
         transferer.transfer(TransferConfig.allOperations(), classpathRepository, jdbcRepository);
